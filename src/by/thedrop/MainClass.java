@@ -25,5 +25,8 @@ public class MainClass {
         System.out.println("z - q = " + z.substruct(q));
         System.out.println("z * q = " + z.multiply(q));
         System.out.println("z / q = " + z.divide(q));
+
+        System.out.println(z.toCartesianForm());
+        System.out.println(q.toPolarForm());
     }
 }

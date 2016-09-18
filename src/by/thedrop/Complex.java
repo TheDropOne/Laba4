@@ -34,7 +34,7 @@ public class Complex {
     }
 
     public Complex multiply(Complex complex) {
-        this.real = real * complex.getReal() - imaginaries - complex.getImaginaries();
+        this.real = real * complex.getReal() - imaginaries * complex.getImaginaries();
         this.imaginaries = real * complex.getImaginaries() + imaginaries * complex.getReal();
         return this;
 
@@ -45,14 +45,14 @@ public class Complex {
         return toCartesianForm();
     }
 
-    private String toPolarForm() {
+    public String toPolarForm() {
         DecimalFormat df = new DecimalFormat("##0.00");
         String module = df.format(getModule());
         String argument = df.format(getArgument());
-        return getModule() + "(cos(" + module + ") + i*sin(" + argument + "))";
+        return module + "(cos(" + argument + ") + i*sin(" + argument + "))";
     }
 
-    private String toCartesianForm() {
+    public String toCartesianForm() {
         DecimalFormat df = new DecimalFormat("##0.00");
         String real = df.format(getReal());
         String imaginaries = df.format(getImaginaries());
@@ -75,7 +75,6 @@ public class Complex {
     public void setReal(double real) {
         this.real = real;
     }
-
 
     public double getImaginaries() {
         return imaginaries;
