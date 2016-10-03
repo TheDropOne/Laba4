@@ -21,10 +21,13 @@ public class Runner {
         Complex z = new Complex(5, 1);
         Complex q = new Complex(15, 10);
 
+        System.out.println("Z = " + z);
+        System.out.println("Q = " + q);
+
         System.out.println("z + q = " + z.add(q));
         System.out.println("New z - q = " + z.substruct(q));
         System.out.println("z * q = " + z.multiply(q));
-        System.out.println("z / q = " + z.divide(q));
+        System.out.println("New z / q = " + z.divide(q));
 
         System.out.println(z.toCartesianForm());
         System.out.println(q.toPolarForm());
