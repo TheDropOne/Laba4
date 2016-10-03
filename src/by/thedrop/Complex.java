@@ -28,14 +28,19 @@ public class Complex {
     }
 
     public Complex divide(Complex complex) {
-        this.real = (real * complex.getReal() + imaginaries * complex.getImaginaries()) / complex.getModule();
-        this.imaginaries = (real * complex.getReal() - imaginaries * complex.getImaginaries()) / complex.getModule();
+        double cModule = complex.getModule();
+        double cReal = complex.getReal();
+        double cImaginaries = complex.getImaginaries();
+        this.real = (real * cReal + imaginaries * cImaginaries) / cModule;
+        this.imaginaries = (real * cReal - imaginaries * cImaginaries) / cModule;
         return this;
     }
 
     public Complex multiply(Complex complex) {
-        this.real = real * complex.getReal() - imaginaries * complex.getImaginaries();
-        this.imaginaries = real * complex.getImaginaries() + imaginaries * complex.getReal();
+        double cReal = complex.getReal();
+        double cImaginaries = complex.getImaginaries();
+        this.real = real * cReal - imaginaries * cImaginaries;
+        this.imaginaries = real * cImaginaries + imaginaries * cReal;
         return this;
 
     }
@@ -61,7 +66,9 @@ public class Complex {
     }
 
     public double getModule() {
-        return Math.sqrt(getReal() * getReal() + getImaginaries() * getImaginaries());
+        double cReal = getReal();
+        double cImaginaries = getImaginaries();
+        return Math.sqrt(cReal * cReal + cImaginaries * cImaginaries);
     }
 
     public double getArgument() {
