@@ -16,15 +16,18 @@ z = r * e^(i * fi).
 Разработанный класс (или классы) должен реализовывать арифметику комплексных чисел и давать строковое представлении комплексного числа в алгебраической и тригонометрической формах.
 */
 
-public class MainClass {
+public class Runner {
     public static void main(String[] args) {
         Complex z = new Complex(5, 1);
         Complex q = new Complex(15, 10);
 
+        System.out.println("Z = " + z);
+        System.out.println("Q = " + q);
+
         System.out.println("z + q = " + z.add(q));
-        System.out.println("z - q = " + z.substruct(q));
+        System.out.println("New z - q = " + z.substruct(q));
         System.out.println("z * q = " + z.multiply(q));
-        System.out.println("z / q = " + z.divide(q));
+        System.out.println("New z / q = " + z.divide(q));
 
         try {
             System.out.println(Complex.parseComplex("15.0e^(14.5i)"));
