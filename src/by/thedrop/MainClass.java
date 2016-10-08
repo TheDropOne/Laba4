@@ -26,7 +26,23 @@ public class MainClass {
         System.out.println("z * q = " + z.multiply(q));
         System.out.println("z / q = " + z.divide(q));
 
+        try {
+            System.out.println(Complex.parseComplex("15.0e^(14.5i)"));
+            System.out.println(Complex.parseComplex("15.0+i*14.5"));
+            System.out.println(Complex.parseComplex("15.0(cos(2.2)+i*sin(2.2))"));
+
+            System.out.println(Complex.parseComplex("15.0(cos(2.2)+i*sin(2.2)")); //error, no bracket at end
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            try {
+                System.out.println(Complex.parseComplex("15.0(cos(2.2)i*sin(2.2)")); //error, no plus
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
         System.out.println(z.toCartesianForm());
         System.out.println(q.toPolarForm());
+        System.out.println(q.toExponencialForm());
     }
 }
